@@ -21,6 +21,21 @@ export const Drink = (props) => {
     <button class="order-btn">Objednat</button>
   </div>`
 
+  const orderbtnElm = element.querySelector('.order-btn');
+  const imgElm = element.querySelector('.drink__cup');
+
+  orderbtnElm.addEventListener('click', () => {
+    if (!props.ordered) {
+    imgElm.classList.toggle('drink__cup--selected');
+    orderbtnElm.textContent = "Zrušit";
+    props.ordered = true;
+  } else {
+    imgElm.classList.toggle('drink__cup--selected');
+    orderbtnElm.textContent = "Objednat";
+    props.ordered = false;
+  }
+});
+
   return element;
 };
 
@@ -31,39 +46,4 @@ export const Drink = (props) => {
 
 
 
-// const Drink = (props) => {
-//   const drinkElm = document.createElement('div');
-//   drinkElm.classList.add('drink');
-//   const drinkProductElm = document.createElement('div');
-//   drinkProductElm.classList.add('drink__product');
-//   drinkElm.appendChild(drinkProductElm);
-//   const drinkCupElm = document.createElement('div');
-//   drinkCupElm.classList.add('drink__cup');
-//   drinkProductElm.appendChild(drinkCupElm);
-//   const imgElm = document.createElement('img');
-//   imgElm.src = `/assets/cups/${props.id}.png`
-//   drinkCupElm.appendChild(imgElm);
-//   const drinkInfoElm = document.createElement('div');
-//   drinkInfoElm.classList.add('drink__info');
-//   drinkProductElm.appendChild(drinkInfoElm);
-//   const h3Elm = document.createElement('h3');
-//   h3Elm.textContent = props.name;
-//   drinkInfoElm.appendChild(h3Elm);
-
-
-//   for (let i = 0; i < layers.length; i++) {
-//     layerElm.innerHTML += Layer(layers[i]);
-//   }
-
-//   const drinkControlsElm = element.createElement('div');
-//   drinkControlsElm.classList('drink__controls');
-//   drinkElm.appendChild(drinkControlsElm);
-//   const orderbtnElm = document.createElement('button');
-//   orderbtnElm.classList.add('order-btn');
-//   orderbtnElm.textContent = 'Objednat';
-//   drinkControlsElm.appendChild(orderbtnElm);
-
-//   return drinkElm;
-
-// }
 
