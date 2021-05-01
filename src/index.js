@@ -1,6 +1,7 @@
 import './style.css';
 
-import { Layer} from './Layer/index'
+import { Drink} from './Drink/index'
+
 
 console.log('funguju!');
 
@@ -27,25 +28,25 @@ for (let i = 0; i < aElements.length; i++) {
 
 // ---------------------Objednávání  nápoje-----------------------------
 
-const objElm = document.querySelector('.order-btn');
-const drinkElm = document.querySelector('.drink__cup');
-let ordered = false;
+// const objElm = document.querySelector('.order-btn');
+// const drinkElm = document.querySelector('.drink__cup');
+// let ordered = false;
 
-const order = () => {
-    if (ordered === false) {
-    console.log('objednat');
-    drinkElm.classList.toggle('drink__cup--selected');
-    objElm.textContent = "Zrušit";
-    ordered = true;
-  } else {
-    console.log('zrusit');
-    drinkElm.classList.toggle('drink__cup--selected');
-    objElm.textContent = "Objednat";
-    ordered = false;
-  }
-}
+// const order = () => {
+//     if (ordered === false) {
+//     console.log('objednat');
+//     drinkElm.classList.toggle('drink__cup--selected');
+//     objElm.textContent = "Zrušit";
+//     ordered = true;
+//   } else {
+//     console.log('zrusit');
+//     drinkElm.classList.toggle('drink__cup--selected');
+//     objElm.textContent = "Objednat";
+//     ordered = false;
+//   }
+// }
 
-objElm.addEventListener('click', order);
+// objElm.addEventListener('click', order);
 
 // --------------------Layer------------------------------------------
 
@@ -56,21 +57,42 @@ objElm.addEventListener('click', order);
 
 // -----------------------Seznam ingredienci---------------------------
 
-const layers = [
-  {
-    color: '#feeeca',
-    label: 'mléčná pěna',
-  },
-  {
-    color: '#fed7b0',
-    label: 'teplé mléko',
-  },
-  {
-    color: '#613916',
-    label: 'espresso',
-  },
-];
+// const layers = [
+//   {
+//     color: '#feeeca',
+//     label: 'mléčná pěna',
+//   },
+//   {
+//     color: '#fed7b0',
+//     label: 'teplé mléko',
+//   },
+//   {
+//     color: '#613916',
+//     label: 'espresso',
+//   },
+// ];
 
-for (let i = 0; i < layers.length; i++) {
-  layerElm.innerHTML += Layer(layers[i]);
-}
+// for (let i = 0; i < layers.length; i++) {
+//   layerElm.innerHTML += Layer(layers[i]);
+// }
+
+// ----------------------Komponenta Drink----------------
+
+const drink = {
+  id: 'romano',
+  name: 'Romano',
+  ordered: false,
+  layers: [
+    {
+      color: '#fbdf5b',
+      label: 'citrón',
+    },
+    {
+      color: '#613916',
+      label: 'espresso',
+    },
+  ],
+};
+
+const drinksListElm = document.querySelector('.drinks-list');
+drinksListElm.appendChild(Drink(drink));
