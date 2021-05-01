@@ -310,3 +310,10 @@ nav a:hover {
     width: 33.333%;
   }
 }
+
+
+@media screen and (min-width: 769px) {
+  .nav-btn {
+    display: none;
+  }
+}
