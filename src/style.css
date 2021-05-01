@@ -317,3 +317,11 @@ nav a:hover {
     display: none;
   }
 }
+
+.gallery__info {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  text-shadow: 2px 2px gray;
+  font-size: 1.1rem;
+}
