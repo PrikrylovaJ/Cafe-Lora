@@ -300,9 +300,15 @@ nav a:hover {
 }
 
 .gallery__info {
-  padding-top: 5rem;
-  padding-bottom: 3rem;
+  font-size: 2rem;
+  text-shadow: 1px 1px 2px black;
+  margin: 1.5rem;
+  padding-top: 15rem;
   text-align: center;
-  text-shadow: 2px 2px gray;
-  font-size: 1.1rem;
+  
+}
+
+.container__gallery {
+  height: 100%;
+  backdrop-filter: blur(6px);
 }
